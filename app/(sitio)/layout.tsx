@@ -5,6 +5,7 @@ import {
   Young_Serif,
 } from "next/font/google"
 
+import { sitio } from "@/config/sitio"
 import "./espiga.css"
 import "./tres-d.css"
 import { cn } from "@/lib/utils"
@@ -37,7 +38,15 @@ export const metadata: Metadata = {
   title: { absolute: "La Espiga · Panadería de barrio en Pocitos" },
   description:
     "Pan de masa madre, bizcochos y tortas por encargo en Pocitos, Montevideo. Armá tu bolsa, elegí la hora y retirá sin hacer fila.",
-  robots: { index: false, follow: false },
+  robots: { index: false, follow: true },
+  openGraph: {
+    type: "website",
+    locale: "es_UY",
+    siteName: `${sitio.nombre} · proyecto de muestra`,
+    title: "La Espiga · Panadería de barrio en Pocitos",
+    description:
+      "Pan de masa madre, bizcochos y tortas por encargo en Pocitos, Montevideo. Armá tu bolsa, elegí la hora y retirá sin hacer fila.",
+  },
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {
