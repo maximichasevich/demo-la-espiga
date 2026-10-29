@@ -166,8 +166,8 @@ export function TortaEscena({ config }: { config: ConfigTorta }) {
       if (!arrastrando) return
       const dx = e.clientX - ultimoX
       const dtE = Math.max(1, e.timeStamp - ultimoT)
-      giro += dx * 0.55
-      vel = (dx * 0.55) / dtE
+      giro -= dx * 0.55
+      vel = (-dx * 0.55) / dtE
       ultimoX = e.clientX
       ultimoT = e.timeStamp
     }
@@ -182,7 +182,7 @@ export function TortaEscena({ config }: { config: ConfigTorta }) {
     const tecla = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft" || e.key === "ArrowRight") {
         e.preventDefault()
-        girarRef.current(e.key === "ArrowLeft" ? -30 : 30)
+        girarRef.current(e.key === "ArrowLeft" ? 30 : -30)
       }
     }
 
